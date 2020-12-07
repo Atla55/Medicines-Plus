@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="DrugBase">
+		<defName>Peyote</defName>
+		<label>Peyote</label>
+		<description>The fruit of the peyote crop; known to have hallucinogenic properties.</description>
+		<graphicData>
+			<texPath>Things/Peyote</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>15</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>0.10</joy>
+			<drugCategory>Social</drugCategory>
+			<baseIngestTicks>240</baseIngestTicks>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.21,0,0.05)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Eat {0}</ingestCommandString>
+			<ingestReportString>Eating {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>PeyoteHigh</hediffDef>
+					<severity>0.75</severity>
+					<toleranceChemical>Peyote</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>PeyoteTolerance</hediffDef>
+					<severity>0.040</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>Peyote</chemical>
+				<addictiveness>0.03</addictiveness>
+				<minToleranceToAddict>0.2</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+				<needLevelOffset>1</needLevelOffset>
+				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+				<listOrder>100</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.18</min>
+					<max>0.35</max>
+				</overdoseSeverityOffset>
+				<largeOverdoseChance>0.005</largeOverdoseChance>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>PeyoteHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>high on peyote fruit</label>
+		<labelNoun>a peyote high</labelNoun>
+		<description>Peyote's psychoactive chemicals in the bloodstream. Induces a slight hallucinogenic effect.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.9</painFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	<!-- Peyote addiction -->
+</Defs>

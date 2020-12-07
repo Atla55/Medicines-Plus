@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RoseTea</defName>
+		<label>rose tea</label>
+		<description>Tea made from either dehydrated or fresh rose petals. A non-caffienated subsitute for other hot beverages.</description>
+    <descriptionHyperlinks>
+      <HediffDef>TeaHigh</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/RoseTea</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>550</WorkToMake>
+			<MarketValue>5</MarketValue>
+			<Mass>0.1</Mass>
+			<Nutrition>0.05</Nutrition>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Fluid, Processed</foodType>
+			<drugCategory>Social</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>TeaHigh</hediffDef>
+					<severity>0.5</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<recipeUsers>
+				<li>FueledStove</li>
+				<li>ElectricStove</li>
+				<li>Campfire</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<RosePetal>3</RosePetal>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1009</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>TeaHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>rose tea</label>
+		<description>Rose tea helps improve the immune system slightly, helping to retain heat.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<ImmunityGainSpeed>0.02</ImmunityGainSpeed>
+					<ComfyTemperatureMin>-10</ComfyTemperatureMin>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

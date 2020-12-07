@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>UpperTolerance</defName>
+		<label>upper tolerance</label>
+		<description>A built-up tolerance to upper. The more severe this tolerance is, the more upper it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.015</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>Upper</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>ChemicalDamageSevere</hediff>
+				<minSeverity>0.60</minSeverity>
+				<baseMtbDays>60</baseMtbDays>
+				<partsToAffect>
+					<li>Kidney</li>
+					<li>Liver</li>
+				</partsToAffect>
+			</li>
+		</hediffGivers>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->	
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>opioidTolerance</defName>
+		<label>opioid tolerance</label>
+		<description>A built-up tolerance to opioids. The more severe this tolerance is, the more opioid drugs it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.008</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>opioid</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>ChemicalDamageSevere</hediff>
+				<minSeverity>0.50</minSeverity>
+				<baseMtbDays>120</baseMtbDays>
+				<partsToAffect>
+					<li>Kidney</li>
+					<li>Brain</li>
+				</partsToAffect>
+			</li>
+		</hediffGivers>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>JoyTolerance</defName>
+		<label>joy tolerance</label>
+		<description>A built-up tolerance to joy. The more severe this tolerance is, the more joy pills it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.005</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>Joy</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>Dementia</hediff>
+				<minSeverity>0.60</minSeverity>
+				<baseMtbDays>120</baseMtbDays>
+			</li>
+		</hediffGivers>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>PeyoteTolerance</defName>
+		<label>Peyote tolerance</label>
+		<description>A built-up tolerance to peyote fruit. The more severe this tolerance is, the more peyote it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.02</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>Peyote</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>ChemicalDamageModerate</hediff>
+				<minSeverity>0.80</minSeverity>
+				<baseMtbDays>120</baseMtbDays>
+				<partsToAffect>
+					<li>Kidney</li>
+				</partsToAffect>
+			</li>
+		</hediffGivers>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<!--<ChemicalDef>
+		<defName>SSalts</defName>
+		<label>SSalts</label>
+		<toleranceHediff>SSaltsTolerance</toleranceHediff>
+	</ChemicalDef>
+	
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>SSaltsTolerance</defName>
+		<label>Ammonia tolerance</label>
+		<description>A built-up tolerance to ammonia gas on the lungs. The more severe this tolerance is, the more ammonia it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.05</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>SSalts</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>ChemicalDamageModerate</hediff>
+				<minSeverity>0.8</minSeverity>
+				<baseMtbDays>80</baseMtbDays>
+				<partsToAffect>
+					<li>Lung</li>
+				</partsToAffect>
+			</li>
+		</hediffGivers>
+	</HediffDef>-->
+	<!--=======================================================================-->
+	<!--=======================================================================-->	
+
+</Defs>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>ThornWeedExtract</defName>
+		<label>ThornWeed Serum</label>
+		<description>The active numbing chemical found within ThornWeed needles refined into a much more potent syrum that also creates less unwanted side effects.</description>
+    <descriptionHyperlinks>
+      <HediffDef>NumbingSerumHigh</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/TW_Serum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>900</WorkToMake>
+			<MarketValue>50</MarketValue>
+			<Mass>0.01</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<baseIngestTicks>60</baseIngestTicks>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.21,0,0.05)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Inject {0}</ingestCommandString>
+			<ingestReportString>Injecting {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>NumbingSerumHigh</hediffDef>
+					<severity>0.5</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_AdvUtilityMedicine</researchPrerequisite>
+			<skillRequirements>
+				<Medicine>9</Medicine>
+			</skillRequirements>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Steel>5</Steel>
+			<Neutroamine>1</Neutroamine>
+			<ThornWeedNeedle>5</ThornWeedNeedle>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.08</min>
+					<max>0.14</max>
+				</overdoseSeverityOffset>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>NumbingSerumHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>thornweed serum</label>
+		<description>Refined thornweed numbing toxin in the bloodstream, providing strong analgesic effects</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Butterfly sensation.</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>Slightly Analgesic</label>
+				<painFactor>0.9</painFactor>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<label>Moderately Analgesic</label>
+				<painFactor>0.6</painFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Strongly Analgesic</label>
+				<painFactor>0.4</painFactor>
+				<vomitMtbDays>0.6</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.8</setMax>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<label>Fully Deadened</label>
+				<painFactor>0</painFactor>
+				<vomitMtbDays>0.3</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.6</setMax>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.3</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

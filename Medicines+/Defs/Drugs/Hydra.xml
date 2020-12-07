@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>Hydra</defName>
+		<label>hydra</label>
+		<description>A dense Mechanite based powder that helps in the healing of wounds and scars. Similar to the healing properties of luciferium. Take once every 15 days for effect to take place.</description>
+		<graphicData>
+			<texPath>Things/Hydra</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>1200</WorkToMake>
+			<MarketValue>64</MarketValue>
+			<Mass>0.005</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<baseIngestTicks>240</baseIngestTicks>
+			<ingestSound>Ingest_Snort</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.21,0,0.05)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Snort {0}</ingestCommandString>
+			<ingestReportString>Snorting {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>HydraHigh</hediffDef>
+					<severity>1.0</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_CrimsonBulbRefinement</researchPrerequisite>
+			<skillRequirements>
+				<Medicine>5</Medicine>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>1</Neutroamine>
+			<CrimsonBulb>2</CrimsonBulb>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1008</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>HydraHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>hydra</label>
+		<description>Hydra mechanites working within the bloodstream. Slowly removes scar tissue, without the addiction of luciferium.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_HealPermanentWounds"/>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.06</severityPerDay>
+			</li>
+		</comps>
+	</HediffDef>
+	<ResearchProjectDef>
+		<defName>CrimsonBulbRefining</defName>
+		<label>Crimson Bulb Refining</label>
+		<description>Learn to extract the stored Bio-Chemical polymers within this plant.</description>
+		<baseCost>1000</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+			<li>DrugProduction</li>
+		</prerequisites>
+		<researchViewX>3.35</researchViewX>
+		<researchViewY>2.7</researchViewY>
+	</ResearchProjectDef>
+</Defs>

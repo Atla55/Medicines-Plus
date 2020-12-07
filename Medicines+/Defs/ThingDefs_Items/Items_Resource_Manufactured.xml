@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>CrimsonBulb</defName>
+    <label>crimson bulb</label>
+    <description>A faintly glowing, red bulb. It contains strong bio-chemical polymer agents that are vital for the production of advanced medicines.</description>
+    <thingClass>Medicine</thingClass>
+    <graphicData>
+      <texPath>Things/CBulb</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+		<techLevel>Spacer</techLevel>
+		<statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <MarketValue>20</MarketValue>
+      <Mass>0.35</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>10</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>25</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>RosePetal</defName>
+    <label>rose petal</label>
+    <description>The petals from the flower of the rose plant.</description>
+    <thingClass>Medicine</thingClass>
+    <graphicData>
+      <texPath>Things/RosePetal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+		<techLevel>Neolithic</techLevel>
+		<statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <MarketValue>2</MarketValue>
+      <Mass>0.02</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>10</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <tickerType>Rare</tickerType>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>8</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+    </comps>
+  </ThingDef>
+  
+</Defs>

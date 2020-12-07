@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="DrugPillBase">
+		<defName>Aniracetam</defName>
+		<label>Aniracetam</label>
+		<description>One of the most-proven Nootropics. Known to help promote an increase in memory capacity, learning ability, as well as increases in focus. As such this drug was used heavily by Mid-World students.</description>
+		<descriptionHyperlinks>
+			<HediffDef>AniracetamHigh</HediffDef>
+			<HediffDef>AniracetamBrainFog</HediffDef>
+		</descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Aniracetam</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>1000</WorkToMake>
+			<MarketValue>51</MarketValue>
+			<Mass>0.005</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AniracetamHigh</hediffDef>
+					<severity>1</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_AdvUtilityMedicine</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>3</Neutroamine>
+			<MedicineIndustrial>1</MedicineIndustrial>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1001</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.08</min>
+					<max>0.14</max>
+				</overdoseSeverityOffset>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>AniracetamHigh</defName>
+		<hediffClass>AT_MedicinesPlus.Hediff_AfterEffector</hediffClass>
+		<label>Aniracetam</label>
+		<description>Active nootopics in the bloodstream. Helps improve mental capabilities. May cause fatigue or increased appetite.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<restFallFactor>1.2</restFallFactor>
+				<hungerRateFactorOffset>0.3</hungerRateFactorOffset>
+				<statOffsets>
+					<GlobalLearningFactor>0.4</GlobalLearningFactor>
+					<ResearchSpeed>0.5</ResearchSpeed>
+					<PsychicSensitivity>1</PsychicSensitivity>
+					<SurgerySuccessChanceFactor>0.2</SurgerySuccessChanceFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>AniracetamBrainFog</defName>
+		<label>mental fog</label>
+		<labelNoun>mental fog</labelNoun>
+		<description>An unpleasant delayed after-effect of aniracetam consumption. Causes laboured thinking.</description>
+		<hediffClass>AT_MedicinesPlus.Hediff_AniracetamFog</hediffClass>
+		<initialSeverity>1</initialSeverity>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<label>slight</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.80</minSeverity>
+				<label>strong</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.20</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

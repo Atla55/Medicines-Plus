@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>Upper</defName>
+		<label>Upper</label>
+		<description>The most commonly abused substance within glitterworld olympic games. Upper gives the user a short burst of immense speed. Moderately addictive, with long term use leading to kidney failure.</description>
+	<descriptionHyperlinks>
+      <HediffDef>UpperHigh</HediffDef>
+      <HediffDef>UpperAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>	
+		<graphicData>
+			<texPath>Things/Adrenaline</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>900</WorkToMake>
+			<MarketValue>70</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Hard</drugCategory>
+			<baseIngestTicks>60</baseIngestTicks>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.21,0,0.05)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Inject {0}</ingestCommandString>
+			<ingestReportString>Injecting {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>UpperHigh</hediffDef>
+					<severity>0.80</severity>
+					<toleranceChemical>Upper</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_OffsetNeed">
+					<need>Rest</need>
+					<offset>0.1</offset>
+					<toleranceChemical>Upper</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>UpperTolerance</hediffDef>
+					<severity>0.040</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_BasicCashCrops</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<PsychoidLeaves>10</PsychoidLeaves>
+			<Neutroamine>3</Neutroamine>
+			<Steel>5</Steel>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+        <chemical>Upper</chemical>
+        <addictiveness>0.04</addictiveness>
+		<minToleranceToAddict>0</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>1000</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.005</largeOverdoseChance>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>UpperHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Filled with Upper</label>
+		<labelNoun>an upper high</labelNoun>
+		<description>Active upper in the bloodstream. Generates an intense, blood pumping effect that numbs pain.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-3</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.5</painFactor>
+				<restFallFactor>0.9</restFallFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.50</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

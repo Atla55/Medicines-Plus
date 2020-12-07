@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>Joy</defName>
+		<label>Joy</label>
+		<description>A drug developed by UrbWorld governments to keep it's citizens in check; It produces a strong euphoric high. Very Addictive.</description>
+	<descriptionHyperlinks>
+      <HediffDef>JoyHigh</HediffDef>
+      <HediffDef>JoyTolerance</HediffDef>
+      <HediffDef>JoyAddiction</HediffDef>
+	  <hediffDef>Dementia</hediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/JoyPill</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>600</WorkToMake>
+			<MarketValue>47</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>1.0</joy>	
+			<drugCategory>Hard</drugCategory>
+			<baseIngestTicks>100</baseIngestTicks>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.21,0,0.05)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Take {0}</ingestCommandString>
+			<ingestReportString>Swallowing {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>JoyHigh</hediffDef>
+					<severity>0.75</severity>
+					<toleranceChemical>Joy</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_OffsetNeed">
+					<need>Rest</need>
+					<offset>0.2</offset>
+					<toleranceChemical>Joy</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>JoyTolerance</hediffDef>
+					<severity>0.05</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_AdvCashCrops</researchPrerequisite>
+			<skillRequirements>
+				<Medicine>6</Medicine>
+				<Crafting>2</Crafting>
+			</skillRequirements>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Ambrosia>1</Ambrosia>
+			<RawFungus>10</RawFungus>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>Joy</chemical>
+				<addictiveness>0.20</addictiveness>
+				<minToleranceToAddict>0.05</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+				<needLevelOffset>1</needLevelOffset>
+				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+				<listOrder>1007</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.18</min>
+					<max>0.35</max>
+				</overdoseSeverityOffset>
+				<largeOverdoseChance>0.01</largeOverdoseChance>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>JoyHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>high on joy</label>
+		<labelNoun>a joy high</labelNoun>
+		<description>Active chemical joy in the bloodstream. Exhibits intense psychedelic and antidepressants properties.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1.0</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<restFallFactor>0.90</restFallFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.10</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

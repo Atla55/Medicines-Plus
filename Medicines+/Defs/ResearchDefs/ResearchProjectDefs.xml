@@ -1,0 +1,83 @@
+﻿<?Yml version="1.0" encoding="utf8" ?>
+<Defs>
+
+	<ResearchProjectDef>
+		<defName>MP_BaseResearch</defName>
+		<label>Base Research</label>
+		<tab>MP_MedicinesPlus</tab>
+		<description>Base</description>
+		<baseCost>300</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites><li>DrugProduction</li></prerequisites>
+		<researchViewY>2</researchViewY>
+		<researchViewX>0</researchViewX>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MP_BasicUtilityMedicine</defName>
+		<label>Basic utility medicine</label>
+		<tab>MP_MedicinesPlus</tab>
+		<description>Research into the development of basic utility based drugs for use in medicine, such as painkillers.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites><li>MP_BaseResearch</li></prerequisites>
+		<researchViewY>1</researchViewY>
+		<researchViewX>1</researchViewX>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MP_AdvUtilityMedicine</defName>
+		<label>Advanced utility medicine</label>
+		<tab>MP_MedicinesPlus</tab>
+		<description>Developing further on the previous research, this project will look into advanced utility medicines that require rare materials, such as Tyrox - a powerful immune system booster.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+		<li>MP_CrimsonBulbRefinement</li>
+		<li>MP_BasicUtilityMedicine</li>
+		</prerequisites>
+		<researchViewY>1</researchViewY>
+		<researchViewX>3</researchViewX>
+	</ResearchProjectDef>
+
+	
+	<ResearchProjectDef>
+		<defName>MP_CrimsonBulbRefinement</defName>
+		<label>Crimson bulb refining</label>
+		<tab>MP_MedicinesPlus</tab>
+		<description>Find ways to grow crimson bulbs in hydroponics, powerful semi-synthetic crops that are required for advanced medicines.</description>
+		<baseCost>800</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites><li>MP_BaseResearch</li></prerequisites>
+		<researchViewY>2</researchViewY>
+		<researchViewX>1</researchViewX>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MP_BasicCashCrops</defName>
+		<label>Basic profit drugs</label>
+		<tab>MP_MedicinesPlus</tab>
+		<description>Research into the development of basic profitable drugs, made mostly for their high trading value, such as upper.</description>
+		<baseCost>500</baseCost>
+		<techLevel>Industrial</techLevel>
+		<prerequisites><li>MP_BaseResearch</li></prerequisites>
+		<researchViewY>3</researchViewY>
+		<researchViewX>1</researchViewX>
+	</ResearchProjectDef>
+
+	<ResearchProjectDef>
+		<defName>MP_AdvCashCrops</defName>
+		<label>Advanced profit drugs</label>
+		<tab>MP_MedicinesPlus</tab>
+		<description>Developing further on the previous research, this project will look into advanced drugs that have very high profit margins and require complex materials to make, such as heroin</description>
+		<baseCost>500</baseCost>
+		<techLevel>Spacer</techLevel>
+		<prerequisites>
+		<li>MP_CrimsonBulbRefinement</li>
+		<li>MP_BasicCashCrops</li>
+		</prerequisites>
+		<researchViewY>3</researchViewY>
+		<researchViewX>3</researchViewX>
+	</ResearchProjectDef>
+
+</Defs>

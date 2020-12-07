@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="PlantBase">
+		<defName>PlantCrimsonBulb</defName>
+		<label>crimson bulb</label>
+		<description>A low yield, fragile, time consuming but; very useful crop. A Prerequisite for advanced drug production.</description>
+		<statBases>
+			<MaxHitPoints>10</MaxHitPoints>
+			<Nutrition>0.20</Nutrition>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Plants/CRPlant</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<selectable>true</selectable>
+		<pathCost>10</pathCost>
+		<plant>
+      <fertilityMin>1.2</fertilityMin>
+      <fertilitySensitivity>0.5</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			<maxMeshCount>1</maxMeshCount>
+			<harvestTag>Standard</harvestTag>
+			<harvestedThingDef>CrimsonBulb</harvestedThingDef>
+			<harvestYield>2</harvestYield>
+			<sowMinSkill>14</sowMinSkill>
+			<sowTags>
+				<li>Hydroponic</li>
+			</sowTags>
+			<topWindExposure>0.2</topWindExposure>
+			<growDays>16</growDays>
+			<visualSizeRange>0.6~1.5</visualSizeRange>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="PlantBase">
+		<defName>PlantThornWeed</defName>
+		<label>thorn weed</label>
+		<description>A sturdy, thin crop that develops small needles that cause a faint numbing effect; used by the plant as a natural defence. These needles can be harvested and used in medicine as a weak painkiller.</description>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Nutrition>0.05</Nutrition>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Plants/ThornWeed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<selectable>true</selectable>
+		<pathCost>10</pathCost>
+		<plant>
+			<fertilitySensitivity>1.2</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			
+			<maxMeshCount>1</maxMeshCount>
+			<harvestTag>Standard</harvestTag>
+			<harvestedThingDef>ThornWeedNeedle</harvestedThingDef>
+			<harvestYield>1</harvestYield>
+			<sowTags>
+				<li>Ground</li>
+				<li>Hydroponic</li>
+			</sowTags>
+			<topWindExposure>0.2</topWindExposure>
+			<growDays>6</growDays>
+			<visualSizeRange>0.5~1.4</visualSizeRange>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="PlantBase">
+		<defName>PlantPeyote</defName>
+		<label>peyote</label>
+		<description>A small, spineless cactus that can cause auditory and visual hallucinations when it's fruit is ingested.</description>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<Nutrition>0.15</Nutrition>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Plants/Peyote</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<selectable>true</selectable>
+		<pathCost>10</pathCost>
+		<plant>
+			<fertilitySensitivity>1.0</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			
+			<maxMeshCount>1</maxMeshCount>
+			<harvestTag>Standard</harvestTag>
+			<harvestedThingDef>Peyote</harvestedThingDef>
+			<harvestYield>1</harvestYield>
+			<sowTags>
+				<li>Ground</li>
+			</sowTags>
+			<topWindExposure>0.1</topWindExposure>
+			<growDays>5</growDays>
+			<visualSizeRange>0.4~0.9</visualSizeRange>
+		</plant>
+	</ThingDef>
+	
+	<ThingDef ParentName="PlantBase">
+		<defName>PlantPapaver</defName>
+		<label>papaver</label>
+		<description>A small flower that produces a thick latex. Used in further opiate production.</description>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<Nutrition>0.08</Nutrition>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Plants/Papaver</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+		</graphicData>
+		<selectable>true</selectable>
+		<pathCost>10</pathCost>
+		<plant>
+			<fertilitySensitivity>1.0</fertilitySensitivity>
+			<dieIfLeafless>true</dieIfLeafless>
+			
+			<maxMeshCount>4</maxMeshCount>
+			<harvestTag>Standard</harvestTag>
+			<harvestedThingDef>PoppyLatex</harvestedThingDef>
+			<harvestYield>1</harvestYield>
+			<sowTags>
+				<li>Ground</li>
+				<li>Hydroponic</li>
+			</sowTags>
+			<topWindExposure>0.3</topWindExposure>
+			<growDays>5</growDays>
+			<visualSizeRange>0.4~1</visualSizeRange>
+		</plant>
+	</ThingDef>
+	
+</Defs>

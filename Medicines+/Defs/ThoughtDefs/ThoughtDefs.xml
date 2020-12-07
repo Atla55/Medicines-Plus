@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThoughtDef>
+		<defName>UpperHighThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>UpperHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>high on upper</label>
+				<description>I'm pumped!</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>UpperWithdrawal</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>UpperAddiction</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>Upper withdrawal</label>
+				<description>I'm always drowsy and I feel heavy.</description>
+				<baseMoodEffect>-16</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+
+	<ThoughtDef>
+		<defName>opioidHigh</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>opioidHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>high on opium</label>
+				<description>I feel calm and faded.</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>opioid2High</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>opioid2High</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>high on morphine</label>
+				<description>I feel much more at ease. This feels good.</description>
+				<baseMoodEffect>10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>opioid3High</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>opioid3High</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>high on heroin</label>
+				<description>I am in pure ecstacy. Heaven...</description>
+				<baseMoodEffect>50</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>opioidWithdrawal</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>opioidAddiction</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>opioid withdrawal</label>
+				<description>My eyes hurt, my muscles ache and I can't focus at all. I feel terrible..</description>
+				<baseMoodEffect>-40</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<ThoughtDef>
+		<defName>CyanideHighThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>CyanideHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>Cyanide Intoxication</label>
+				<description>I can't sit still as I feel my heart pounding my chest, am I going to die?</description>
+				<baseMoodEffect>-100</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<ThoughtDef>
+		<defName>JoyHigh</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>JoyHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>high on joy</label>
+				<description>What a wonderful day..</description>
+				<baseMoodEffect>45</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>JoyWithdrawal</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>JoyAddiction</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>joy withdrawal</label>
+				<description>Darkness Darkness Darkness...</description>
+				<baseMoodEffect>-45</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<ThoughtDef>
+		<defName>TeaHigh</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>TeaHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>rose tea warmth</label>
+				<description>That tea had a very distinct flavour. I quite like it.</description>
+				<baseMoodEffect>2</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<ThoughtDef>
+		<defName>PeyoteHigh</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>PeyoteHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>tripping on peyote fruit</label>
+				<description>I can hear nature itself.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>PeyoteWithdrawal</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>PeyoteAddiction</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>Peyote withdrawal</label>
+				<description>I feel disconnected from myself.</description>
+				<baseMoodEffect>-12</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	
+	<ThoughtDef>
+		<defName>AniracetamBrainFogThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>AniracetamBrainFog</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>Aniracetam weardown</label>
+				<description>I Can't. Seem to. Focus? Ugh. </description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

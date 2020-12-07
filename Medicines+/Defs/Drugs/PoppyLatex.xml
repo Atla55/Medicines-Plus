@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="DrugBase">
+		<defName>PoppyLatex</defName>
+		<label>Opium</label>
+		<description>The dried latex harvested from opium poppies. This can be immediately smoked or refined to create a more potent opioid.</description>
+    <descriptionHyperlinks>
+      <HediffDef>opioidHigh</HediffDef>
+      <HediffDef>opioidTolerance</HediffDef>
+      <HediffDef>opioidAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/OpiumPipe</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>6</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>0.30</joy>
+			<drugCategory>Social</drugCategory>
+			<ingestSound>Ingest_Smoke</ingestSound>
+			<baseIngestTicks>240</baseIngestTicks>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.23,0,0.065)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Smoke {0}</ingestCommandString>
+			<ingestReportString>Smoking {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>opioidHigh</hediffDef>
+					<severity>0.5</severity>
+					<toleranceChemical>opioid</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>opioidTolerance</hediffDef>
+					<severity>0.008</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>opioid</chemical>
+				<addictiveness>0.01</addictiveness>
+				<minToleranceToAddict>0.2</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.15</existingAddictionSeverityOffset>
+				<needLevelOffset>0.5</needLevelOffset>
+				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+				<listOrder>1006</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.05</min>
+					<max>0.10</max>
+				</overdoseSeverityOffset>
+				<largeOverdoseChance>0.005</largeOverdoseChance>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>opioidHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>high on opium</label>
+		<labelNoun>an opium high</labelNoun>
+		<description>Moderate opioids within the bloodstream, creates a somewhat strong numbing, euphoric effect.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.9</painFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.2</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

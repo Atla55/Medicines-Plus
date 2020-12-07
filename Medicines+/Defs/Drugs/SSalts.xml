@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>SSalts</defName>
+		<label>smelling salts</label>
+		<description>Also known as Ammonia Salts help to stimulate the respiratory system of creatures by causing a reflex to very small amounts of ammonia gas.</description>
+    <descriptionHyperlinks>
+      <HediffDef>SaltsHigh</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Salts</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>800</WorkToMake>
+			<MarketValue>16</MarketValue>
+			<Mass>0.08</Mass>
+		</statBases>
+		<techLevel>Neolithic</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<baseIngestTicks>100</baseIngestTicks>
+			<ingestSound>Ingest_Snort</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.21,0,0.05)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Sniff {0}</ingestCommandString>
+			<ingestReportString>Sniffing {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>SaltsHigh</hediffDef>
+          <severity>1</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.05</offset>
+        </li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_BasicUtilityMedicine</researchPrerequisite>
+			<skillRequirements>
+				<Medicine>3</Medicine>
+			</skillRequirements>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<PsychoidLeaves>1</PsychoidLeaves>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1012</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>SaltsHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>smelling salts</label>
+		<description>A quick burst of immonia in the lungs. Causes respiratory distress and provides a brief surge of energy</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-10</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.9</painFactor>
+				<capMods>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>+0.2</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>+0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

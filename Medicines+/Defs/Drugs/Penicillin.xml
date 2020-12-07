@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>Penicillin</defName>
+		<label>penicillin</label>
+		<description>One of the earliest effective medications for treating bacterial infections. Take once every day for max effect.</description>
+	<descriptionHyperlinks>
+      <HediffDef>PenicillinHigh</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Penicillin</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>500</WorkToMake>
+			<MarketValue>12</MarketValue>
+			<Mass>0.005</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>PenicillinHigh</hediffDef>
+					<severity>0.5</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_BasicUtilityMedicine</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>1</Neutroamine>
+			<MedicineHerbal>1</MedicineHerbal>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1008</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.04</min>
+					<max>0.08</max>
+				</overdoseSeverityOffset>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>PenicillinHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>penicillin</label>
+		<description>Active antibiotics in the bloodstream. Helps fight against general bacterial infections.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<ImmunityGainSpeed>0.2</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

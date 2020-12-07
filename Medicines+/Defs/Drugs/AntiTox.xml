@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>AntiTox</defName>
+		<label>AntiTox</label>
+		<description>AntiTox reduces the amount of absorbed toxic particules in the air by coating the lungs with a chemical filter.</description>
+    <descriptionHyperlinks>
+      <HediffDef>AntiToxHigh</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/AntiTox</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>800</WorkToMake>
+			<MarketValue>50</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AntiToxHigh</hediffDef>
+					<severity>0.5</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_BasicUtilityMedicine</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>3</Neutroamine>
+			<MedicineHerbal>2</MedicineHerbal>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1002</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>AntiToxHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>AntiTox</label>
+		<description>Anti-tox coating lining the lungs. Helps to negate health effects of toxic substance inhalation.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<ToxicSensitivity>-0.4</ToxicSensitivity>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

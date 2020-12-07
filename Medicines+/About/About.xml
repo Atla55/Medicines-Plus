@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Medicines+</name>
+	<author>Atlas</author>
+	<supportedVersions>
+	<li>1.2</li>
+	</supportedVersions>
+	<packageId>Atlas.MedicinesPlus.AT</packageId>
+	<description>Adds several new drugs and medicines to the game</description>
+</ModMetaData>

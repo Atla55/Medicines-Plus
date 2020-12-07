@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>Morphine</defName>
+		<label>Morphine</label>
+		<description>A derivative taken from opium poppy latex. This is a much more powerful opioid that also acts as a strong painkiller. Usually lasting between 2-3 hours.</description>
+    <descriptionHyperlinks>
+      <HediffDef>opioid2High</HediffDef>
+      <HediffDef>opioidTolerance</HediffDef>
+      <HediffDef>opioidAddiction</HediffDef>
+      <HediffDef>ChemicalDamageSevere</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Morphine</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>1000</WorkToMake>
+			<MarketValue>49</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<joyKind>Chemical</joyKind>
+			<joy>0.10</joy>
+			<drugCategory>Medical</drugCategory>
+			<baseIngestTicks>240</baseIngestTicks>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.23,0,0.065)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Inject {0}</ingestCommandString>
+			<ingestReportString>Injecting {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>opioid2High</hediffDef>
+					<severity>0.5</severity>
+					<toleranceChemical>opioid</toleranceChemical>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>opioidTolerance</hediffDef>
+					<severity>0.032</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_BasicUtilityMedicine</researchPrerequisite>
+			<skillRequirements>
+				<Medicine>4</Medicine>
+			</skillRequirements>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Steel>5</Steel>
+			<Neutroamine>1</Neutroamine>
+			<PoppyLatex>3</PoppyLatex>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>opioid</chemical>
+				<addictiveness>0.1</addictiveness>
+				<minToleranceToAddict>0.10</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+				<needLevelOffset>0.75</needLevelOffset>
+				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+				<listOrder>1005</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.15</min>
+					<max>0.30</max>
+				</overdoseSeverityOffset>
+				<largeOverdoseChance>0.01</largeOverdoseChance>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>opioid2High</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>high on morphine</label>
+		<labelNoun>a morphine high</labelNoun>
+		<description>High dose of opioids in the bloodstream. Creates a moderate high, but mainly supresses pain.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>0.2</painFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

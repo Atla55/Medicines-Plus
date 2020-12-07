@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Upper</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>upper</label>
+		<description>Because of an upper addiction, this person needs to regularly inject the drug to avoid withdrawal symptoms.</description>
+		<listPriority>51</listPriority>
+		<fallPerDay>0.233</fallPerDay>
+	</NeedDef>
+	
+	<HediffDef ParentName="AddictionBase">
+		<defName>UpperAddiction</defName>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<label>upper addiction</label>
+		<description>Because of an upper addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<causesNeed>Chemical_Upper</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.0333</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Opioid</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>opioid</label>
+		<description>Because of an opioid addiction, this person needs to regularly consume or inject the drug to avoid withdrawal symptoms.</description>
+		<listPriority>52</listPriority>
+		<fallPerDay>0.4</fallPerDay>
+	</NeedDef>
+	
+	<HediffDef ParentName="AddictionBase">
+		<defName>opioidAddiction</defName>		
+		<label>opioid addiction</label>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<causesNeed>Chemical_Opioid</causesNeed>
+		<description>A chemical addiction to opioids of any kind. Long-term presence of opioids has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
+\nWithout regular doses of opioids, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.02</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Joy</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>joy</label>
+		<description>Because of a joy addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<listPriority>50</listPriority>
+		<fallPerDay>0.333</fallPerDay>
+	</NeedDef>
+	
+	<HediffDef ParentName="AddictionBase">
+		<defName>JoyAddiction</defName>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<label>joy addiction</label>
+		<description>Because of a joy addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<causesNeed>Chemical_Joy</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.0333</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Peyote</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>Peyote</label>
+		<description>Because of a Peyote addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<listPriority>50</listPriority>
+	</NeedDef>
+	
+	<HediffDef ParentName="AddictionBase">
+		<defName>PeyoteAddiction</defName>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<label>Peyote addiction</label>
+		<description>Because of a peyote addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<causesNeed>Chemical_Peyote</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.05</severityPerDay>
+			</li>
+		</comps>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	
+
+</Defs>

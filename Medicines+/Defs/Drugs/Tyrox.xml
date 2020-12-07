@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>Tyrox</defName>
+		<label>Tyrox</label>
+		<description>Vastly boosts the metabolism and therefore the immune response of any lifeform that injects this medicine. Take once per day for max effect.</description>
+		<graphicData>
+			<texPath>Things/Tyrox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>1400</WorkToMake>
+			<MarketValue>108</MarketValue>
+			<Mass>0.005</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>TyroxHigh</hediffDef>
+					<severity>0.5</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_AdvUtilityMedicine</researchPrerequisite>
+			<skillRequirements>
+				<Medicine>8</Medicine>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Steel>5</Steel>
+			<Neutroamine>2</Neutroamine>
+			<Penicillin>1</Penicillin>
+			<CrimsonBulb>1</CrimsonBulb>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1000</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.08</min>
+					<max>0.14</max>
+				</overdoseSeverityOffset>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>TyroxHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>tyrox</label>
+		<description>Active Tyrox in the bloodstream, boosting the metabolism and therefore the immune response</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<ImmunityGainSpeed>1</ImmunityGainSpeed>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Metabolism</capacity>
+						<offset>0.35</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>
