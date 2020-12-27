@@ -65,5 +65,40 @@
 	<!--=======================================================================-->
 	<!--=======================================================================-->
 
+	<ChemicalDef>
+		<defName>Hypnotol</defName>
+		<label>Hypnotol</label>
+		<addictionHediff>HypnotolAddiction</addictionHediff>
+		<toleranceHediff>HypnotolTolerance</toleranceHediff>
+		<onGeneratedAddictedToleranceChance>0</onGeneratedAddictedToleranceChance>
+		<onGeneratedAddictedEvents>
+			<li>
+				<hediff>MP_ChemicalDamageMinor</hediff>
+				<chance>0.02</chance>
+				<partsToAffect>
+					<li>Brain</li>
+				</partsToAffect>
+			</li>
+		</onGeneratedAddictedEvents>
+	</ChemicalDef>
 
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	
+	<ChemicalDef>
+		<defName>Aniracetam</defName>
+		<label>Aniracetam</label>
+		<addictionHediff>AniracetamAddiction</addictionHediff>
+		<toleranceHediff>AniracetamTolerance</toleranceHediff>
+		<onGeneratedAddictedToleranceChance>0</onGeneratedAddictedToleranceChance>
+		<onGeneratedAddictedEvents>
+			<li>
+				<hediff>MP_ChemicalDamageMinor</hediff>
+				<chance>0.02</chance>
+				<partsToAffect>
+					<li>Brain</li>
+				</partsToAffect>
+			</li>
+		</onGeneratedAddictedEvents>
+	</ChemicalDef>
 </Defs>

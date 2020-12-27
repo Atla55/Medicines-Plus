@@ -3,7 +3,7 @@
 
 	<ResearchProjectDef>
 		<defName>MP_BaseResearch</defName>
-		<label>Base Research</label>
+		<label>Medicine basics</label>
 		<tab>MP_MedicinesPlus</tab>
 		<description>Base</description>
 		<baseCost>300</baseCost>
@@ -30,7 +30,7 @@
 		<label>Advanced utility medicine</label>
 		<tab>MP_MedicinesPlus</tab>
 		<description>Developing further on the previous research, this project will look into advanced utility medicines that require rare materials, such as Tyrox - a powerful immune system booster.</description>
-		<baseCost>500</baseCost>
+		<baseCost>750</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
 		<li>MP_CrimsonBulbRefinement</li>
@@ -70,7 +70,7 @@
 		<label>Advanced profit drugs</label>
 		<tab>MP_MedicinesPlus</tab>
 		<description>Developing further on the previous research, this project will look into advanced drugs that have very high profit margins and require complex materials to make, such as heroin</description>
-		<baseCost>500</baseCost>
+		<baseCost>750</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
 		<li>MP_CrimsonBulbRefinement</li>

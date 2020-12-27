@@ -58,7 +58,7 @@
 		<needClass>Need_Chemical</needClass>
 		<label>joy</label>
 		<description>Because of a joy addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-		<listPriority>50</listPriority>
+		<listPriority>53</listPriority>
 		<fallPerDay>0.333</fallPerDay>
 	</NeedDef>
 	
@@ -83,7 +83,8 @@
 		<needClass>Need_Chemical</needClass>
 		<label>Peyote</label>
 		<description>Because of a Peyote addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-		<listPriority>50</listPriority>
+		<listPriority>54</listPriority>
+		<fallPerDay>0.2</fallPerDay>
 	</NeedDef>
 	
 	<HediffDef ParentName="AddictionBase">
@@ -101,5 +102,86 @@
 	<!--=======================================================================-->
 	<!--=======================================================================-->
 	
-
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Hypnotol</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>Hypnotol</label>
+		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
+		<listPriority>40</listPriority>
+		<fallPerDay>0.2</fallPerDay>
+	</NeedDef>
+	
+	<HediffDef ParentName="AddictionBase">
+		<defName>HypnotolAddiction</defName>
+		<hediffClass>AT_MedicinesPlus.Hediff_HypnotolAddiction</hediffClass>
+		<label>Hypnotol addiction</label>
+		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
+		<causesNeed>Chemical_Hypnotol</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+			</li>
+		</comps>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+		<minSeverity>0</minSeverity>
+        <label>unmet</label>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Berserk</mentalState>
+            <mtbDays>2</mtbDays>
+          </li>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>1</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+		<minSeverity>0.1</minSeverity>
+		        <label>weakening</label>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>30</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+      <li>
+		<minSeverity>0.3</minSeverity>
+        <mentalStateGivers>
+          <li>
+            <mentalState>Wander_Psychotic</mentalState>
+            <mtbDays>200</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+	</HediffDef>
+	
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Aniracetam</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>Aniracetam</label>
+		<description>Because of a Aniracetam addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<listPriority>40</listPriority>
+		<fallPerDay>0.2</fallPerDay>
+	</NeedDef>
+	
+	<HediffDef ParentName="AddictionBase">
+		<defName>AniracetamAddiction</defName>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<label>Aniracetam addiction</label>
+		<description>Because of a Aniracetam addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<causesNeed>Chemical_Aniracetam</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>

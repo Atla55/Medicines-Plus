@@ -40,7 +40,7 @@
 		</ingestible>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>1011</listOrder>
+				<listOrder>3003</listOrder>
 				<overdoseSeverityOffset>
 					<min>0.02</min>
 					<max>0.04</max>

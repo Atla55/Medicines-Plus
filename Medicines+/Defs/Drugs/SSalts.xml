@@ -37,19 +37,15 @@
           <hediffDef>SaltsHigh</hediffDef>
           <severity>1</severity>
         </li>
-        <li Class="IngestionOutcomeDoer_OffsetNeed">
-          <need>Rest</need>
-          <offset>0.05</offset>
-        </li>
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
-			<researchPrerequisite>MP_BasicUtilityMedicine</researchPrerequisite>
 			<skillRequirements>
 				<Medicine>3</Medicine>
 			</skillRequirements>
 			<recipeUsers>
 				<li>DrugLab</li>
+				<li>CraftingSpot</li>
 			</recipeUsers>
 		</recipeMaker>
 		<costList>
@@ -58,7 +54,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>1012</listOrder>
+				<listOrder>3001</listOrder>
 			</li>
 		</comps>
 	</ThingDef>
@@ -73,7 +69,7 @@
 		<isBad>false</isBad>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-10</severityPerDay>
+				<severityPerDay>-12</severityPerDay>
 				<showHoursToRecover>true</showHoursToRecover>
 			</li>
 		</comps>

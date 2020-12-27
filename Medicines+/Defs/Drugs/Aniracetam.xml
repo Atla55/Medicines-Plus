@@ -3,10 +3,13 @@
 	<ThingDef ParentName="DrugPillBase">
 		<defName>Aniracetam</defName>
 		<label>Aniracetam</label>
-		<description>One of the most-proven Nootropics. Known to help promote an increase in memory capacity, learning ability, as well as increases in focus. As such this drug was used heavily by Mid-World students.</description>
+		<description>One of the most-proven Nootropics. Known to help promote an increase in memory capacity, learning ability, as well as increases in focus. As such this drug was used heavily by glitterworld students.\n\nCauses extreme mental decline after use that may be lethal if combined with other health problems.</description>
 		<descriptionHyperlinks>
 			<HediffDef>AniracetamHigh</HediffDef>
 			<HediffDef>AniracetamBrainFog</HediffDef>
+			<HediffDef>AniracetamAddiction</HediffDef>
+			<HediffDef>AniracetamTolerance</HediffDef>
+			<HediffDef>MP_ChemicalDamageMinor</HediffDef>
 		</descriptionHyperlinks>
 		<graphicData>
 			<texPath>Things/Aniracetam</texPath>
@@ -27,6 +30,11 @@
 					<hediffDef>AniracetamHigh</hediffDef>
 					<severity>1</severity>
 				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AniracetamTolerance</hediffDef>
+					<severity>0.5</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
@@ -41,18 +49,25 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>1001</listOrder>
+				<chemical>Joy</chemical>
+				<addictiveness>0.20</addictiveness>
+				<minToleranceToAddict>0.05</minToleranceToAddict>
+				<existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+				<needLevelOffset>1</needLevelOffset>
+				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
+				<listOrder>3015</listOrder>
 				<overdoseSeverityOffset>
-					<min>0.08</min>
-					<max>0.14</max>
+					<min>0.18</min>
+					<max>0.35</max>
 				</overdoseSeverityOffset>
+				<largeOverdoseChance>0.01</largeOverdoseChance>
 			</li>
 		</comps>
 	</ThingDef>
 	
 	<HediffDef>
 		<defName>AniracetamHigh</defName>
-		<hediffClass>AT_MedicinesPlus.Hediff_AfterEffector</hediffClass>
+		<hediffClass>AT_MedicinesPlus.Hediff_AniracetamHigh</hediffClass>
 		<label>Aniracetam</label>
 		<description>Active nootopics in the bloodstream. Helps improve mental capabilities. May cause fatigue or increased appetite.</description>
 		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
@@ -61,17 +76,16 @@
 		<isBad>false</isBad>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-2</severityPerDay>
+				<severityPerDay>-1</severityPerDay>
 				<showHoursToRecover>true</showHoursToRecover>
 			</li>
 		</comps>
 		<stages>
 			<li>
-				<restFallFactor>1.2</restFallFactor>
-				<hungerRateFactorOffset>0.3</hungerRateFactorOffset>
+				<restFallFactor>1.1</restFallFactor>
 				<statOffsets>
-					<GlobalLearningFactor>0.4</GlobalLearningFactor>
-					<ResearchSpeed>0.5</ResearchSpeed>
+					<GlobalLearningFactor>0.75</GlobalLearningFactor>
+					<ResearchSpeed>0.75</ResearchSpeed>
 					<PsychicSensitivity>1</PsychicSensitivity>
 					<SurgerySuccessChanceFactor>0.2</SurgerySuccessChanceFactor>
 				</statOffsets>
@@ -89,12 +103,13 @@
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-0.5</severityPerDay>
+				<severityPerDay>-0.1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
 			</li>
 		</comps>
 		<stages>
 			<li>
-				<minSeverity>0.4</minSeverity>
+				<minSeverity>0</minSeverity>
 				<label>slight</label>
 				<capMods>
 					<li>
@@ -104,12 +119,32 @@
 				</capMods>
 			</li>
 			<li>
-				<minSeverity>0.80</minSeverity>
+				<minSeverity>0.20</minSeverity>
+				<label>moderate</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.40</minSeverity>
 				<label>strong</label>
 				<capMods>
 					<li>
 						<capacity>Consciousness</capacity>
-						<offset>-0.20</offset>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.60</minSeverity>
+				<label>intense</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.25</offset>
 					</li>
 				</capMods>
 			</li>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>	
+
+   <!--Adds rose petals as a harvestedThingDef-->
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName = "Plant_Rose"]/plant</xpath>
+    <value>
+			<harvestedThingDef>RosePetal</harvestedThingDef>
+			<harvestYield>1</harvestYield>
+    </value>
+  </Operation>
+ 
+</Patch>

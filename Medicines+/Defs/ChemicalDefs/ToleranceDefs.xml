@@ -22,6 +22,18 @@
 					<li>Liver</li>
 				</partsToAffect>
 			</li>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>MP_MuscleSpasm</hediff>
+				<minSeverity>0.80</minSeverity>
+				<baseMtbDays>20</baseMtbDays>
+				<partsToAffect>
+					<li>Arm</li>
+					<li>Leg</li>
+					<li>Hand</li>
+					<li>Foot</li>
+					<li>Shoulder</li>
+				</partsToAffect>
+			</li>
 		</hediffGivers>
 	</HediffDef>
 	<!--=======================================================================-->
@@ -99,36 +111,53 @@
 	</HediffDef>
 	<!--=======================================================================-->
 	<!--=======================================================================-->
-	<!--<ChemicalDef>
-		<defName>SSalts</defName>
-		<label>SSalts</label>
-		<toleranceHediff>SSaltsTolerance</toleranceHediff>
-	</ChemicalDef>
-	
 	<HediffDef ParentName="DrugToleranceBase">
-		<defName>SSaltsTolerance</defName>
-		<label>Ammonia tolerance</label>
-		<description>A built-up tolerance to ammonia gas on the lungs. The more severe this tolerance is, the more ammonia it takes to get the same effect.</description>
+		<defName>HypnotolTolerance</defName>
+		<label>Hypnotol tolerance</label>
+		<description>A built-up tolerance to hypnotol. The more severe this tolerance is, the more hypnotol it takes to get the same effect.</description>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-0.05</severityPerDay>
+				<severityPerDay>-0.02</severityPerDay>
 			</li>
 			<li Class="HediffCompProperties_DrugEffectFactor">
-				<chemical>SSalts</chemical>
+				<chemical>Hypnotol</chemical>
 			</li>
 		</comps>
 		<hediffGivers>
 			<li Class="HediffGiver_RandomDrugEffect">
-				<hediff>ChemicalDamageModerate</hediff>
-				<minSeverity>0.8</minSeverity>
-				<baseMtbDays>80</baseMtbDays>
-				<partsToAffect>
-					<li>Lung</li>
-				</partsToAffect>
+				<hediff>Dementia</hediff>
+				<minSeverity>0.70</minSeverity>
+				<baseMtbDays>120</baseMtbDays>
 			</li>
 		</hediffGivers>
-	</HediffDef>-->
+	</HediffDef>
+
+
+
 	<!--=======================================================================-->
 	<!--=======================================================================-->	
 
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>AniracetamTolerance</defName>
+		<label>Aniracetam tolerance</label>
+		<description>A built-up tolerance to aniracetam. The more severe this tolerance is, the more hypnotol it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.01</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>Aniracetam</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>MP_ChemicalDamageMinor</hediff>
+				<minSeverity>0.70</minSeverity>
+				<baseMtbDays>120</baseMtbDays>
+				<partsToAffect>
+					<li>Brain</li>
+				</partsToAffect>
+			</li>
+		</hediffGivers>
+	</HediffDef>
 </Defs>

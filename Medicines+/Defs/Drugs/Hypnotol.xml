@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>AddictiveHypnotol</defName>
+		<label>Hypnotol</label>
+		<description>Synthetically produced Hypnotol, an extremely addictive substance that causes mild cognitive decline. Hypnotol is used as a blackmail drug used to force users to do things they wouldn't otherwise do. Hypnotol is often used by pirates to recruit otherwise unwilling captives into their gangs.</description>
+		    <descriptionHyperlinks>
+      <HediffDef>HypnotolHigh</HediffDef>
+	  <HediffDef>HypnotolAddiction</HediffDef>
+	  <HediffDef>HypnotolTolerance</HediffDef>
+	  <HediffDef>MP_ChemicalDamageMinor</HediffDef>
+	  <HediffDef>Dementia</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Tyrox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>1400</WorkToMake>
+			<MarketValue>73</MarketValue>
+			<Mass>0.005</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>HypnotolHigh</hediffDef>
+					<severity>1</severity>
+					<doToGeneratedPawnIfAddicted>true</doToGeneratedPawnIfAddicted>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>HypnotolTolerance</hediffDef>
+					<severity>0.05</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_CrimsonBulbRefinement</researchPrerequisite>
+			<skillRequirements>
+				<Medicine>10</Medicine>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>2</Neutroamine>
+			<CrimsonBulb>2</CrimsonBulb>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>Hypnotol</chemical>
+				<addictiveness>1.00</addictiveness>
+				<existingAddictionSeverityOffset>1</existingAddictionSeverityOffset>
+				<needLevelOffset>1</needLevelOffset>
+				<isCombatEnhancingDrug>false</isCombatEnhancingDrug>
+				<listOrder>3016</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.2</min>
+					<max>0.4</max>
+				</overdoseSeverityOffset>
+				<largeOverdoseChance>0.02</largeOverdoseChance>
+			</li>
+		</comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+	</ThingDef>
+
+
+	<HediffDef>
+		<defName>HypnotolHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>hypnotol</label>
+		<labelNoun>brainwashed on hypnotol</labelNoun>
+		<description>Recently ingested hypnotol in the bloodstream. Results in reduced cognitive function. May cause fatigue and mood swings.</description>
+		<defaultLabelColor>(0.5,0.5,0.5)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<GlobalLearningFactor>-0.5</GlobalLearningFactor>
+					<ResearchSpeed>-0.5</ResearchSpeed>
+					<SocialImpact>-0.8</SocialImpact>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

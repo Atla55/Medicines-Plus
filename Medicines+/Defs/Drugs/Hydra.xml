@@ -52,9 +52,17 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>1008</listOrder>
+        <chemical>Luciferium</chemical>
+        <addictiveness>0</addictiveness>
+        <needLevelOffset>0.1</needLevelOffset>
+        <listOrder>3011</listOrder>
+        <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
+        <largeOverdoseChance>0.005</largeOverdoseChance>
 			</li>
 		</comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
 	</ThingDef>
 	<HediffDef>
 		<defName>HydraHigh</defName>
@@ -72,16 +80,5 @@
 			</li>
 		</comps>
 	</HediffDef>
-	<ResearchProjectDef>
-		<defName>CrimsonBulbRefining</defName>
-		<label>Crimson Bulb Refining</label>
-		<description>Learn to extract the stored Bio-Chemical polymers within this plant.</description>
-		<baseCost>1000</baseCost>
-		<techLevel>Spacer</techLevel>
-		<prerequisites>
-			<li>DrugProduction</li>
-		</prerequisites>
-		<researchViewX>3.35</researchViewX>
-		<researchViewY>2.7</researchViewY>
-	</ResearchProjectDef>
+
 </Defs>

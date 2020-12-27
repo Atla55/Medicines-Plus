@@ -12,7 +12,7 @@
 		<rotatable>false</rotatable>
 		<statBases>
 			<WorkToMake>1400</WorkToMake>
-			<MarketValue>108</MarketValue>
+			<MarketValue>105</MarketValue>
 			<Mass>0.005</Mass>
 		</statBases>
 		<techLevel>Spacer</techLevel>
@@ -36,14 +36,13 @@
 			</recipeUsers>
 		</recipeMaker>
 		<costList>
-			<Steel>5</Steel>
 			<Neutroamine>2</Neutroamine>
 			<Penicillin>1</Penicillin>
 			<CrimsonBulb>1</CrimsonBulb>
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>1000</listOrder>
+				<listOrder>3013</listOrder>
 				<overdoseSeverityOffset>
 					<min>0.08</min>
 					<max>0.14</max>
@@ -68,8 +67,9 @@
 		</comps>
 		<stages>
 			<li>
+			<hungerRateFactorOffset>0.3</hungerRateFactorOffset>
 				<statOffsets>
-					<ImmunityGainSpeed>1</ImmunityGainSpeed>
+					<ImmunityGainSpeed>0.5</ImmunityGainSpeed>
 				</statOffsets>
 				<capMods>
 					<li>

@@ -15,7 +15,7 @@
 		<rotatable>false</rotatable>
 		<statBases>
 			<WorkToMake>500</WorkToMake>
-			<MarketValue>12</MarketValue>
+			<MarketValue>29</MarketValue>
 			<Mass>0.005</Mass>
 		</statBases>
 		<techLevel>Industrial</techLevel>
@@ -40,7 +40,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>1008</listOrder>
+				<listOrder>3009</listOrder>
 				<overdoseSeverityOffset>
 					<min>0.04</min>
 					<max>0.08</max>

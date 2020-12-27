@@ -3,11 +3,12 @@
 	<ThingDef ParentName="MakeableDrugBase">
 		<defName>Upper</defName>
 		<label>Upper</label>
-		<description>The most commonly abused substance within glitterworld olympic games. Upper gives the user a short burst of immense speed. Moderately addictive, with long term use leading to kidney failure.</description>
+		<description>The most commonly abused substance within glitterworld olympic games. Upper gives the user a short burst of immense speed. Moderately addictive, with long term use leading to kidney failure and muscle spasms.</description>
 	<descriptionHyperlinks>
       <HediffDef>UpperHigh</HediffDef>
       <HediffDef>UpperAddiction</HediffDef>
       <HediffDef>ChemicalDamageSevere</HediffDef>
+	  <HediffDef>MP_MuscleSpasm</HediffDef>
     </descriptionHyperlinks>	
 		<graphicData>
 			<texPath>Things/Adrenaline</texPath>
@@ -69,7 +70,7 @@
 		<minToleranceToAddict>0</minToleranceToAddict>
         <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>1000</listOrder>
+        <listOrder>3014</listOrder>
         <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
         <largeOverdoseChance>0.005</largeOverdoseChance>
 			</li>
