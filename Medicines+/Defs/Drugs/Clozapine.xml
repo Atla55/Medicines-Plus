@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugPillBase">
+		<defName>Clozapine</defName>
+		<label>clozapine</label>
+		<description>A common anti-psychotic medicine, commonly used to treat bipolar and other mental disorders. Can be used to prevent some pawns from fully acting out impulsive behaviour and extreme mental breaks. May cause vomitting in large doses.</description>
+    <descriptionHyperlinks>
+      <HediffDef>ClozapineHigh</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Clozapine</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>800</WorkToMake>
+			<MarketValue>52</MarketValue>
+			<Mass>0.005</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>ClozapineHigh</hediffDef>
+					<severity>0.4</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_BasicUtilityMedicine</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>2</Neutroamine>
+			<SmokeleafLeaves>5</SmokeleafLeaves>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>3018</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>ClozapineHigh</defName>
+		<hediffClass>AT_MedicinesPlus.Hediff_Clozapine</hediffClass>
+		<label>clozapine</label>
+		<description>Active anti-psychotic compounds within the bloodstream, helps control extreme mental breaks and impulsive behaviour.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<label>weak</label>
+				<statOffsets>
+					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<label>moderate</label>
+				<vomitMtbDays>40</vomitMtbDays>
+				<statOffsets>
+					<MentalBreakThreshold>-0.05</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>strong</label>
+				<vomitMtbDays>20</vomitMtbDays>
+				<statOffsets>
+					<MentalBreakThreshold>-0.1</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+</Defs>

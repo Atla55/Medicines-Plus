@@ -32,7 +32,7 @@
 				</li>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
 					<hediffDef>AniracetamTolerance</hediffDef>
-					<severity>0.5</severity>
+					<severity>0.040</severity>
 					<divideByBodySize>true</divideByBodySize>
 				</li>
 			</outcomeDoers>
@@ -49,9 +49,9 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<chemical>Joy</chemical>
-				<addictiveness>0.20</addictiveness>
-				<minToleranceToAddict>0.05</minToleranceToAddict>
+				<chemical>Aniracetam</chemical>
+				<addictiveness>0.10</addictiveness>
+				<minToleranceToAddict>0.1</minToleranceToAddict>
 				<existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
 				<needLevelOffset>1</needLevelOffset>
 				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>

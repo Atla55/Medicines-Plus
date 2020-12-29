@@ -117,6 +117,7 @@
 		<label>Hypnotol addiction</label>
 		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
 		<causesNeed>Chemical_Hypnotol</causesNeed>
+		<initialSeverity>1</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.2</severityPerDay>

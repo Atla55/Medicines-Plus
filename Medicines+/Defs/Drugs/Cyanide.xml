@@ -29,7 +29,7 @@
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
-			<researchPrerequisite>DrugProduction</researchPrerequisite>
+			<researchPrerequisite>MP_BaseResearch</researchPrerequisite>
 			<recipeUsers>
 				<li>DrugLab</li>
 			</recipeUsers>

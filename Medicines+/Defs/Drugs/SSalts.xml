@@ -40,8 +40,9 @@
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
+		<researchPrerequisite>MP_BaseResearch</researchPrerequisite>
 			<skillRequirements>
-				<Medicine>3</Medicine>
+				<Medicine>2</Medicine>
 			</skillRequirements>
 			<recipeUsers>
 				<li>DrugLab</li>

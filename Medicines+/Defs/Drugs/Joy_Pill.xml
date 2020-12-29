@@ -57,7 +57,7 @@
 		<recipeMaker>
 			<researchPrerequisite>MP_AdvCashCrops</researchPrerequisite>
 			<skillRequirements>
-				<Medicine>6</Medicine>
+				<Medicine>4</Medicine>
 				<Crafting>2</Crafting>
 			</skillRequirements>
 			<recipeUsers>

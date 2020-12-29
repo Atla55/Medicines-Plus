@@ -28,8 +28,7 @@
 		<recipeMaker>
 			<researchPrerequisite>MP_AdvUtilityMedicine</researchPrerequisite>
 			<skillRequirements>
-				<Medicine>8</Medicine>
-				<Crafting>3</Crafting>
+				<Medicine>6</Medicine>
 			</skillRequirements>
 			<recipeUsers>
 				<li>DrugLab</li>

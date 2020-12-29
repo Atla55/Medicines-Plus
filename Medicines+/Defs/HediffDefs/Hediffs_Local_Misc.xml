@@ -17,6 +17,7 @@
     <label>muscle spasm</label>
     <description>Sudden, involuntary movement in one or more muscles.</description>
 	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
     <stages>
       <li>
 		<minSeverity>0</minSeverity>
@@ -36,8 +37,8 @@
       </li>
     </stages>
     <comps>
-      <li Class="HediffCompProperties_SelfHeal">
-        <healAmount>0.05</healAmount>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-12</severityPerDay>
       </li>
     </comps>
   </HediffDef>
