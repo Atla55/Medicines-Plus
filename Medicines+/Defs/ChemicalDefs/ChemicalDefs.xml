@@ -101,4 +101,24 @@
 			</li>
 		</onGeneratedAddictedEvents>
 	</ChemicalDef>
+
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	
+	<ChemicalDef>
+		<defName>MP_Addictol</defName>
+		<label>Addictol</label>
+		<addictionHediff>AddictolAddiction</addictionHediff>
+		<toleranceHediff>AddictolTolerance</toleranceHediff>
+		<onGeneratedAddictedToleranceChance>0</onGeneratedAddictedToleranceChance>
+		<onGeneratedAddictedEvents>
+			<li>
+				<hediff>MP_ChemicalDamageMinor</hediff>
+				<chance>0.02</chance>
+				<partsToAffect>
+					<li>Brain</li>
+				</partsToAffect>
+			</li>
+		</onGeneratedAddictedEvents>
+	</ChemicalDef>
 </Defs>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 	<!--=======================================================================-->
 	<!--=======================================================================-->
@@ -7,10 +7,9 @@
 		<needClass>Need_Chemical</needClass>
 		<label>upper</label>
 		<description>Because of an upper addiction, this person needs to regularly inject the drug to avoid withdrawal symptoms.</description>
-		<listPriority>51</listPriority>
+		<listPriority>101</listPriority>
 		<fallPerDay>0.233</fallPerDay>
 	</NeedDef>
-	
 	<HediffDef ParentName="AddictionBase">
 		<defName>UpperAddiction</defName>
 		<hediffClass>Hediff_Addiction</hediffClass>
@@ -23,34 +22,92 @@
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 		</comps>
+		<stages>
+			<li>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<socialFightChanceFactor>2.0</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.50</offset>
+					</li>
+				</capMods>
+				<hediffGivers>
+					<li Class="HediffGiver_RandomDrugEffect">
+						<hediff>MP_MuscleSpasm</hediff>
+						<minSeverity>0.80</minSeverity>
+						<baseMtbDays>20</baseMtbDays>
+						<partsToAffect>
+							<li>Arm</li>
+							<li>Leg</li>
+							<li>Hand</li>
+							<li>Foot</li>
+							<li>Shoulder</li>
+						</partsToAffect>
+					</li>
+				</hediffGivers>
+			</li>
+		</stages>
 	</HediffDef>
 	<!--=======================================================================-->
 	<!--=======================================================================-->
-	
 	<NeedDef ParentName="DrugAddictionNeedBase">
 		<defName>Chemical_Opioid</defName>
 		<needClass>Need_Chemical</needClass>
 		<label>opioid</label>
 		<description>Because of an opioid addiction, this person needs to regularly consume or inject the drug to avoid withdrawal symptoms.</description>
-		<listPriority>52</listPriority>
+		<listPriority>102</listPriority>
 		<fallPerDay>0.4</fallPerDay>
 	</NeedDef>
-	
 	<HediffDef ParentName="AddictionBase">
-		<defName>opioidAddiction</defName>		
+		<defName>opioidAddiction</defName>
 		<label>opioid addiction</label>
 		<hediffClass>Hediff_Addiction</hediffClass>
 		<causesNeed>Chemical_Opioid</causesNeed>
 		<description>A chemical addiction to opioids of any kind. Long-term presence of opioids has caused neurological adaptations at the cellular level, so the brain can no longer function properly without the drug.
-\nWithout regular doses of opioids, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction</description>
+			\nWithout regular doses of opioids, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction</description>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.02</severityPerDay>
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 		</comps>
+		<stages>
+			<li>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<painFactor>2</painFactor>
+				<restFallFactorOffset>0.2</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Sight</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Binging_DrugExtreme</mentalState>
+						<mtbDays>40</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+		</stages>
 	</HediffDef>
-	
 	<!--=======================================================================-->
 	<!--=======================================================================-->
 	<NeedDef ParentName="DrugAddictionNeedBase">
@@ -58,10 +115,9 @@
 		<needClass>Need_Chemical</needClass>
 		<label>joy</label>
 		<description>Because of a joy addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-		<listPriority>53</listPriority>
+		<listPriority>103</listPriority>
 		<fallPerDay>0.333</fallPerDay>
 	</NeedDef>
-	
 	<HediffDef ParentName="AddictionBase">
 		<defName>JoyAddiction</defName>
 		<hediffClass>Hediff_Addiction</hediffClass>
@@ -74,115 +130,207 @@
 				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 		</comps>
+		<stages>
+			<li>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<socialFightChanceFactor>4.0</socialFightChanceFactor>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 	<!--=======================================================================-->
 	<!--=======================================================================-->
-	
 	<NeedDef ParentName="DrugAddictionNeedBase">
 		<defName>Chemical_Peyote</defName>
 		<needClass>Need_Chemical</needClass>
-		<label>Peyote</label>
+		<label>peyote</label>
 		<description>Because of a Peyote addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-		<listPriority>54</listPriority>
+		<listPriority>104</listPriority>
 		<fallPerDay>0.2</fallPerDay>
 	</NeedDef>
-	
 	<HediffDef ParentName="AddictionBase">
 		<defName>PeyoteAddiction</defName>
 		<hediffClass>Hediff_Addiction</hediffClass>
-		<label>Peyote addiction</label>
+		<label>peyote addiction</label>
 		<description>Because of a peyote addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
 		<causesNeed>Chemical_Peyote</causesNeed>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.05</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 		</comps>
+		<stages>
+			<li>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 	<!--=======================================================================-->
 	<!--=======================================================================-->
-	
 	<NeedDef ParentName="DrugAddictionNeedBase">
 		<defName>Chemical_Hypnotol</defName>
 		<needClass>Need_Chemical</needClass>
-		<label>Hypnotol</label>
+		<label>hypnotol</label>
 		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
-		<listPriority>40</listPriority>
+		<listPriority>105</listPriority>
 		<fallPerDay>0.2</fallPerDay>
 	</NeedDef>
-	
 	<HediffDef ParentName="AddictionBase">
 		<defName>HypnotolAddiction</defName>
 		<hediffClass>AT_MedicinesPlus.Hediff_HypnotolAddiction</hediffClass>
-		<label>Hypnotol addiction</label>
+		<label>hypnotol addiction</label>
 		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
 		<causesNeed>Chemical_Hypnotol</causesNeed>
 		<initialSeverity>1</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 		</comps>
-    <everCurableByItem>false</everCurableByItem>
-    <stages>
-      <li>
-		<minSeverity>0</minSeverity>
-        <label>unmet</label>
-        <mentalStateGivers>
-          <li>
-            <mentalState>Berserk</mentalState>
-            <mtbDays>2</mtbDays>
-          </li>
-          <li>
-            <mentalState>Wander_Psychotic</mentalState>
-            <mtbDays>1</mtbDays>
-          </li>
-        </mentalStateGivers>
-      </li>
-      <li>
-		<minSeverity>0.1</minSeverity>
-		        <label>weakening</label>
-        <mentalStateGivers>
-          <li>
-            <mentalState>Wander_Psychotic</mentalState>
-            <mtbDays>30</mtbDays>
-          </li>
-        </mentalStateGivers>
-      </li>
-      <li>
-		<minSeverity>0.3</minSeverity>
-        <mentalStateGivers>
-          <li>
-            <mentalState>Wander_Psychotic</mentalState>
-            <mtbDays>200</mtbDays>
-          </li>
-        </mentalStateGivers>
-      </li>
-    </stages>
+		<everCurableByItem>false</everCurableByItem>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<label>unmet</label>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>2</mtbDays>
+					</li>
+					<li>
+						<mentalState>Wander_Psychotic</mentalState>
+						<mtbDays>1</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>weakening</label>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Wander_Psychotic</mentalState>
+						<mtbDays>30</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Wander_Psychotic</mentalState>
+						<mtbDays>200</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+		</stages>
 	</HediffDef>
-	
 	<!--=======================================================================-->
 	<!--=======================================================================-->
-	
 	<NeedDef ParentName="DrugAddictionNeedBase">
 		<defName>Chemical_Aniracetam</defName>
 		<needClass>Need_Chemical</needClass>
-		<label>Aniracetam</label>
+		<label>aniracetam</label>
 		<description>Because of a Aniracetam addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-		<listPriority>40</listPriority>
+		<listPriority>106</listPriority>
 		<fallPerDay>0.2</fallPerDay>
 	</NeedDef>
-	
 	<HediffDef ParentName="AddictionBase">
 		<defName>AniracetamAddiction</defName>
 		<hediffClass>Hediff_Addiction</hediffClass>
-		<label>Aniracetam addiction</label>
+		<label>aniracetam addiction</label>
 		<description>Because of a Aniracetam addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
 		<causesNeed>Chemical_Aniracetam</causesNeed>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-0.2</severityPerDay>
+				<severityPerDay>-0.05</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
 			</li>
 		</comps>
+		<stages>
+			<li>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<restFallFactorOffset>0.3</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.10</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	<!--=======================================================================-->
+	<!--=======================================================================-->
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Addictol</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>addictol</label>
+		<description>Because of a Addictol addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<listPriority>107</listPriority>
+		<fallPerDay>0.5</fallPerDay>
+	</NeedDef>
+	<HediffDef ParentName="AddictionBase">
+		<defName>AddictolAddiction</defName>
+		<hediffClass>Hediff_Addiction</hediffClass>
+		<label>addictol addiction</label>
+		<description>Because of a Addictol addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
+		<causesNeed>Chemical_Aniracetam</causesNeed>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.05</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+			</li>
+			<li>
+				<label>withdrawal</label>
+				<restFallFactorOffset>0.3</restFallFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Binging_DrugExtreme</mentalState>
+						<mtbDays>60</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+		</stages>
 	</HediffDef>
 </Defs>

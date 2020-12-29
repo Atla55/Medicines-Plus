@@ -25,7 +25,7 @@
 			<li Class="HediffGiver_RandomDrugEffect">
 				<hediff>MP_MuscleSpasm</hediff>
 				<minSeverity>0.80</minSeverity>
-				<baseMtbDays>20</baseMtbDays>
+				<baseMtbDays>40</baseMtbDays>
 				<partsToAffect>
 					<li>Arm</li>
 					<li>Leg</li>
@@ -88,7 +88,7 @@
 	<!--=======================================================================-->
 	<HediffDef ParentName="DrugToleranceBase">
 		<defName>PeyoteTolerance</defName>
-		<label>Peyote tolerance</label>
+		<label>peyote tolerance</label>
 		<description>A built-up tolerance to peyote fruit. The more severe this tolerance is, the more peyote it takes to get the same effect.</description>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
@@ -113,7 +113,7 @@
 	<!--=======================================================================-->
 	<HediffDef ParentName="DrugToleranceBase">
 		<defName>HypnotolTolerance</defName>
-		<label>Hypnotol tolerance</label>
+		<label>hypnotol tolerance</label>
 		<description>A built-up tolerance to hypnotol. The more severe this tolerance is, the more hypnotol it takes to get the same effect.</description>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
@@ -139,7 +139,7 @@
 
 	<HediffDef ParentName="DrugToleranceBase">
 		<defName>AniracetamTolerance</defName>
-		<label>Aniracetam tolerance</label>
+		<label>aniracetam tolerance</label>
 		<description>A built-up tolerance to aniracetam. The more severe this tolerance is, the more hypnotol it takes to get the same effect.</description>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
@@ -159,5 +159,22 @@
 				</partsToAffect>
 			</li>
 		</hediffGivers>
+	</HediffDef>
+	
+	<!--=======================================================================-->
+	<!--=======================================================================-->	
+
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>AddictolTolerance</defName>
+		<label>addictol tolerance</label>
+		<description>A built-up tolerance to addictol. The more severe this tolerance is, the more hypnotol it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.01</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>MP_Addictol</chemical>
+			</li>
+		</comps>
 	</HediffDef>
 </Defs>

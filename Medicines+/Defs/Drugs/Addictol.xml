@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>MP_Addictol</defName>
+		<label>addictol</label>
+		<description>A synthetic medicine used for addiction replacement therapy, addictol replicates the effects of other drugs without the high, helping addicts remove their addictions quicker. Addictol is however, very addictive itself.</description>
+	<descriptionHyperlinks>
+      <HediffDef>MP_AddictolHigh</HediffDef>
+      <HediffDef>AddictolAddiction</HediffDef>
+      <HediffDef>AddictolTolerance</HediffDef>
+    </descriptionHyperlinks>	
+		<graphicData>
+			<texPath>Things/Addictol</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<WorkToMake>1000</WorkToMake>
+			<MarketValue>45</MarketValue>
+			<Mass>0.05</Mass>
+		</statBases>
+		<techLevel>Industrial</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<baseIngestTicks>60</baseIngestTicks>
+			<ingestSound>Ingest_Snort</ingestSound>
+			<ingestHoldOffsetStanding>
+				<northDefault>
+					<offset>(0.21,0,0.05)</offset>
+				</northDefault>
+			</ingestHoldOffsetStanding>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Inhale {0}</ingestCommandString>
+			<ingestReportString>Inhaling {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MP_AddictolHigh</hediffDef>
+					<severity>1</severity>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AddictolTolerance</hediffDef>
+					<severity>0.040</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>MP_AdvCashCrops</researchPrerequisite>
+			<recipeUsers>
+				<li>DrugLab</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>3</Neutroamine>
+			<Chemfuel>5</Chemfuel>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+        <chemical>MP_Addictol</chemical>
+        <addictiveness>0.05</addictiveness>
+		<minToleranceToAddict>0.1</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0.25</existingAddictionSeverityOffset>
+        <needLevelOffset>0.9</needLevelOffset>
+        <listOrder>3019</listOrder>
+        <overdoseSeverityOffset>0.1~0.2</overdoseSeverityOffset>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<HediffDef>
+		<defName>MP_AddictolHigh</defName>
+		<hediffClass>AT_MedicinesPlus.Hediff_Addictol</hediffClass>
+		<label>addictol</label>
+		<labelNoun>an addictol calm</labelNoun>
+		<description>Active addictol in the brain and bloodstream, replicates the effects of other drugs.</description>
+		<defaultLabelColor>(1,0,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+				<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<painFactor>1.1</painFactor>
+				<restFallFactor>1.5</restFallFactor>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

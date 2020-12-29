@@ -63,6 +63,7 @@
 			<li>
 				<minSeverity>0</minSeverity>
 				<label>weak</label>
+				<hungerRateFactorOffset>0.05</hungerRateFactorOffset>
 				<statOffsets>
 					<MentalBreakThreshold>-0.02</MentalBreakThreshold>
 				</statOffsets>
@@ -70,6 +71,7 @@
 			<li>
 				<minSeverity>0.4</minSeverity>
 				<label>moderate</label>
+				<hungerRateFactorOffset>0.15</hungerRateFactorOffset>
 				<vomitMtbDays>40</vomitMtbDays>
 				<statOffsets>
 					<MentalBreakThreshold>-0.05</MentalBreakThreshold>
@@ -78,6 +80,7 @@
 			<li>
 				<minSeverity>0.8</minSeverity>
 				<label>strong</label>
+				<hungerRateFactorOffset>0.3</hungerRateFactorOffset>
 				<vomitMtbDays>20</vomitMtbDays>
 				<statOffsets>
 					<MentalBreakThreshold>-0.1</MentalBreakThreshold>
