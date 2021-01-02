@@ -15,7 +15,7 @@
 		<rotatable>false</rotatable>
 		<statBases>
 			<WorkToMake>550</WorkToMake>
-			<MarketValue>5</MarketValue>
+			<MarketValue>6</MarketValue>
 			<Mass>0.1</Mass>
 			<Nutrition>0.05</Nutrition>
 		</statBases>
@@ -38,7 +38,7 @@
 			</recipeUsers>
 		</recipeMaker>
 		<costList>
-			<RosePetal>3</RosePetal>
+			<RosePetal>2</RosePetal>
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">

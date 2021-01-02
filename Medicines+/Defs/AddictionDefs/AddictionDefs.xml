@@ -116,7 +116,7 @@
 		<label>joy</label>
 		<description>Because of a joy addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
 		<listPriority>103</listPriority>
-		<fallPerDay>0.333</fallPerDay>
+		<fallPerDay>1</fallPerDay>
 	</NeedDef>
 	<HediffDef ParentName="AddictionBase">
 		<defName>JoyAddiction</defName>
@@ -133,7 +133,7 @@
 		<stages>
 			<li>
 			</li>
-			<li>
+			<li>1
 				<label>withdrawal</label>
 				<socialFightChanceFactor>4.0</socialFightChanceFactor>
 				<capMods>
@@ -185,66 +185,7 @@
 			</li>
 		</stages>
 	</HediffDef>
-	<!--=======================================================================-->
-	<!--=======================================================================-->
-	<NeedDef ParentName="DrugAddictionNeedBase">
-		<defName>Chemical_Hypnotol</defName>
-		<needClass>Need_Chemical</needClass>
-		<label>hypnotol</label>
-		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
-		<listPriority>105</listPriority>
-		<fallPerDay>0.2</fallPerDay>
-	</NeedDef>
-	<HediffDef ParentName="AddictionBase">
-		<defName>HypnotolAddiction</defName>
-		<hediffClass>AT_MedicinesPlus.Hediff_HypnotolAddiction</hediffClass>
-		<label>hypnotol addiction</label>
-		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
-		<causesNeed>Chemical_Hypnotol</causesNeed>
-		<initialSeverity>1</initialSeverity>
-		<comps>
-			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-0.2</severityPerDay>
-				<showDaysToRecover>true</showDaysToRecover>
-			</li>
-		</comps>
-		<everCurableByItem>false</everCurableByItem>
-		<stages>
-			<li>
-				<minSeverity>0</minSeverity>
-				<label>unmet</label>
-				<mentalStateGivers>
-					<li>
-						<mentalState>Berserk</mentalState>
-						<mtbDays>2</mtbDays>
-					</li>
-					<li>
-						<mentalState>Wander_Psychotic</mentalState>
-						<mtbDays>1</mtbDays>
-					</li>
-				</mentalStateGivers>
-			</li>
-			<li>
-				<minSeverity>0.1</minSeverity>
-				<label>weakening</label>
-				<mentalStateGivers>
-					<li>
-						<mentalState>Wander_Psychotic</mentalState>
-						<mtbDays>30</mtbDays>
-					</li>
-				</mentalStateGivers>
-			</li>
-			<li>
-				<minSeverity>0.3</minSeverity>
-				<mentalStateGivers>
-					<li>
-						<mentalState>Wander_Psychotic</mentalState>
-						<mtbDays>200</mtbDays>
-					</li>
-				</mentalStateGivers>
-			</li>
-		</stages>
-	</HediffDef>
+
 	<!--=======================================================================-->
 	<!--=======================================================================-->
 	<NeedDef ParentName="DrugAddictionNeedBase">

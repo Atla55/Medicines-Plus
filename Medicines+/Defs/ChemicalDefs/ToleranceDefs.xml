@@ -109,30 +109,6 @@
 			</li>
 		</hediffGivers>
 	</HediffDef>
-	<!--=======================================================================-->
-	<!--=======================================================================-->
-	<HediffDef ParentName="DrugToleranceBase">
-		<defName>HypnotolTolerance</defName>
-		<label>hypnotol tolerance</label>
-		<description>A built-up tolerance to hypnotol. The more severe this tolerance is, the more hypnotol it takes to get the same effect.</description>
-		<comps>
-			<li Class="HediffCompProperties_SeverityPerDay">
-				<severityPerDay>-0.02</severityPerDay>
-			</li>
-			<li Class="HediffCompProperties_DrugEffectFactor">
-				<chemical>Hypnotol</chemical>
-			</li>
-		</comps>
-		<hediffGivers>
-			<li Class="HediffGiver_RandomDrugEffect">
-				<hediff>Dementia</hediff>
-				<minSeverity>0.70</minSeverity>
-				<baseMtbDays>120</baseMtbDays>
-			</li>
-		</hediffGivers>
-	</HediffDef>
-
-
 
 	<!--=======================================================================-->
 	<!--=======================================================================-->	

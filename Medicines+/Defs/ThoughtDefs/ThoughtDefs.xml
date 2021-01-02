@@ -197,20 +197,5 @@
 		</stages>
 	</ThoughtDef>
 
-	<!--=======================================================================-->
-	<!--=======================================================================-->
-	
-	<ThoughtDef>
-		<defName>HypnotolAddictionThought</defName>
-		<workerClass>ThoughtWorker_Hediff</workerClass>
-		<hediff>HypnotolHigh</hediff>
-		<validWhileDespawned>true</validWhileDespawned>
-		<stages>
-			<li>
-				<label>Hypnotol resistance</label>
-				<description>What am I doing? I can't control myself.</description>
-				<baseMoodEffect>-10</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
+
 </Defs>
