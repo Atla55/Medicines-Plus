@@ -116,7 +116,7 @@
 		<label>joy</label>
 		<description>Because of a joy addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
 		<listPriority>103</listPriority>
-		<fallPerDay>1</fallPerDay>
+		<fallPerDay>1.0</fallPerDay>
 	</NeedDef>
 	<HediffDef ParentName="AddictionBase">
 		<defName>JoyAddiction</defName>
@@ -133,7 +133,7 @@
 		<stages>
 			<li>
 			</li>
-			<li>1
+			<li>
 				<label>withdrawal</label>
 				<socialFightChanceFactor>4.0</socialFightChanceFactor>
 				<capMods>
