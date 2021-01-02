@@ -19,7 +19,7 @@
 			<MarketValue>45</MarketValue>
 			<Mass>0.05</Mass>
 		</statBases>
-		<techLevel>Industrial</techLevel>
+		<techLevel>Spacer</techLevel>
 		<ingestible>
 			<foodType>Processed</foodType>
 			<drugCategory>Medical</drugCategory>
