@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="DrugPillBase">
+		<defName>AddictiveHypnotol</defName>
+		<label>Hypnotol</label>
+		<description>Synthetically produced Hypnotol, an extremely addictive substance that causes mild cognitive decline. Hypnotol is used as a blackmail drug used to force users to do things they wouldn't otherwise do. Hypnotol is often used by advanced pirates to recruit leaders of other factions into their gangs.\n\nCan be used to temporarily recruit prisoners, as long as they keep their addiction.</description>
+		    <descriptionHyperlinks>
+      <HediffDef>HypnotolHigh</HediffDef>
+	  <HediffDef>HypnotolAddiction</HediffDef>
+	  <HediffDef>HypnotolTolerance</HediffDef>
+	  <HediffDef>MP_ChemicalDamageMinor</HediffDef>
+	  <HediffDef>Dementia</HediffDef>
+    </descriptionHyperlinks>
+		<graphicData>
+			<texPath>Things/Hypnotol</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>100</MarketValue>
+			<Mass>0.005</Mass>
+		</statBases>
+		<techLevel>Ultra</techLevel>
+		<minRewardCount>6</minRewardCount>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>HypnotolHigh</hediffDef>
+					<severity>1</severity>
+					<doToGeneratedPawnIfAddicted>true</doToGeneratedPawnIfAddicted>
+				</li>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>HypnotolTolerance</hediffDef>
+					<severity>0.05</severity>
+					<divideByBodySize>true</divideByBodySize>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<chemical>Hypnotol</chemical>
+				<addictiveness>1.00</addictiveness>
+				<existingAddictionSeverityOffset>1</existingAddictionSeverityOffset>
+				<needLevelOffset>1</needLevelOffset>
+				<isCombatEnhancingDrug>false</isCombatEnhancingDrug>
+				<listOrder>3016</listOrder>
+				<overdoseSeverityOffset>
+					<min>0.2</min>
+					<max>0.4</max>
+				</overdoseSeverityOffset>
+				<largeOverdoseChance>0.02</largeOverdoseChance>
+			</li>
+		</comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+	<thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+	</ThingDef>
+
+
+	<HediffDef>
+		<defName>HypnotolHigh</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>hypnotol</label>
+		<labelNoun>brainwashed on hypnotol</labelNoun>
+		<description>Recently ingested hypnotol in the bloodstream. Results in reduced cognitive function. May cause fatigue and mood swings.</description>
+		<defaultLabelColor>(0.5,0.5,0.5)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<statOffsets>
+					<GlobalLearningFactor>-0.5</GlobalLearningFactor>
+					<ResearchSpeed>-0.5</ResearchSpeed>
+					<SocialImpact>-0.8</SocialImpact>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="DrugToleranceBase">
+		<defName>HypnotolTolerance</defName>
+		<label>hypnotol tolerance</label>
+		<description>A built-up tolerance to hypnotol. The more severe this tolerance is, the more hypnotol it takes to get the same effect.</description>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.02</severityPerDay>
+			</li>
+			<li Class="HediffCompProperties_DrugEffectFactor">
+				<chemical>Hypnotol</chemical>
+			</li>
+		</comps>
+		<hediffGivers>
+			<li Class="HediffGiver_RandomDrugEffect">
+				<hediff>Dementia</hediff>
+				<minSeverity>0.70</minSeverity>
+				<baseMtbDays>120</baseMtbDays>
+			</li>
+		</hediffGivers>
+	</HediffDef>
+
+	<NeedDef ParentName="DrugAddictionNeedBase">
+		<defName>Chemical_Hypnotol</defName>
+		<needClass>Need_Chemical</needClass>
+		<label>hypnotol</label>
+		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
+		<listPriority>105</listPriority>
+		<fallPerDay>0.2</fallPerDay>
+	</NeedDef>
+	<HediffDef ParentName="AddictionBase">
+		<defName>HypnotolAddiction</defName>
+		<hediffClass>AT_MedicinesPlus.Hediff_HypnotolAddiction</hediffClass>
+		<label>hypnotol addiction</label>
+		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
+		<causesNeed>Chemical_Hypnotol</causesNeed>
+		<initialSeverity>1</initialSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.2</severityPerDay>
+				<showDaysToRecover>true</showDaysToRecover>
+			</li>
+		</comps>
+		<everCurableByItem>false</everCurableByItem>
+		<stages>
+			<li>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Wander_Psychotic</mentalState>
+						<mtbDays>200</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<label>unmet</label>
+				<mentalStateGivers>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>5</mtbDays>
+					</li>
+					<li>
+						<mentalState>Wander_Psychotic</mentalState>
+						<mtbDays>1</mtbDays>
+					</li>
+				</mentalStateGivers>
+			</li>
+		</stages>
+	</HediffDef>
+
+	
+	<ThoughtDef>
+		<defName>HypnotolAddictionThought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>HypnotolHigh</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>Hypnotol resistance</label>
+				<description>What am I doing? I can't control myself.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+
+	<ChemicalDef>
+		<defName>Hypnotol</defName>
+		<label>Hypnotol</label>
+		<addictionHediff>HypnotolAddiction</addictionHediff>
+		<toleranceHediff>HypnotolTolerance</toleranceHediff>
+		<onGeneratedAddictedToleranceChance>0</onGeneratedAddictedToleranceChance>
+		<onGeneratedAddictedEvents>
+			<li>
+				<hediff>MP_ChemicalDamageMinor</hediff>
+				<chance>0.02</chance>
+				<partsToAffect>
+					<li>Brain</li>
+				</partsToAffect>
+			</li>
+		</onGeneratedAddictedEvents>
+	</ChemicalDef>
+</Defs>

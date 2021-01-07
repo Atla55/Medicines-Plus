@@ -11,8 +11,8 @@
 	  <HediffDef>MP_MuscleSpasm</HediffDef>
     </descriptionHyperlinks>	
 		<graphicData>
-			<texPath>Things/Adrenaline</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Upper</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<rotatable>false</rotatable>
 		<statBases>

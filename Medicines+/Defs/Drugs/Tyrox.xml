@@ -6,7 +6,7 @@
 		<description>Vastly boosts the metabolism and therefore the immune response of any lifeform that injects this medicine. Take once per day for max effect.</description>
 		<graphicData>
 			<texPath>Things/Tyrox</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<socialPropernessMatters>false</socialPropernessMatters>
 		<rotatable>false</rotatable>
