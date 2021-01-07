@@ -63,7 +63,7 @@
 		<minToleranceToAddict>0.1</minToleranceToAddict>
         <existingAddictionSeverityOffset>0.25</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>3019</listOrder>
+        <listOrder>2090</listOrder>
         <overdoseSeverityOffset>0.1~0.2</overdoseSeverityOffset>
 			</li>
 		</comps>

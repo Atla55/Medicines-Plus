@@ -50,7 +50,7 @@
 				<existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
 				<needLevelOffset>1</needLevelOffset>
 				<isCombatEnhancingDrug>true</isCombatEnhancingDrug>
-				<listOrder>3002</listOrder>
+				<listOrder>2085</listOrder>
 				<overdoseSeverityOffset>
 					<min>0.18</min>
 					<max>0.35</max>

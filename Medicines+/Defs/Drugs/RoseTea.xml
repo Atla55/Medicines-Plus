@@ -42,7 +42,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>3004</listOrder>
+				<listOrder>2080</listOrder>
 			</li>
 		</comps>
 	</ThingDef>

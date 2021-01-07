@@ -3,4 +3,6 @@
 
 	<GoodwillChangedReason_Hypnotol>{0} unhappy that {1} has been enslaved under hypnotol.</GoodwillChangedReason_Hypnotol>
 	
+	<MessageText_HypnotolWornOff>{0} has broken free from their hypnotol addiction, they are now leaving.</MessageText_HypnotolWornOff>
+	
 </LanguageData>

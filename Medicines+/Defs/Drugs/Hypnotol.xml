@@ -45,7 +45,7 @@
 				<existingAddictionSeverityOffset>1</existingAddictionSeverityOffset>
 				<needLevelOffset>1</needLevelOffset>
 				<isCombatEnhancingDrug>false</isCombatEnhancingDrug>
-				<listOrder>3016</listOrder>
+				<listOrder>2060</listOrder>
 				<overdoseSeverityOffset>
 					<min>0.2</min>
 					<max>0.4</max>
@@ -119,7 +119,7 @@
 		<label>hypnotol</label>
 		<description>Because of a Hypnotol addiction, this person needs to regularly consume the drug to avoid its brainwashing effects wearing off.</description>
 		<listPriority>105</listPriority>
-		<fallPerDay>0.2</fallPerDay>
+		<fallPerDay>0.25</fallPerDay>
 	</NeedDef>
 	<HediffDef ParentName="AddictionBase">
 		<defName>HypnotolAddiction</defName>

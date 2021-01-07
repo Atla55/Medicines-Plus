@@ -55,7 +55,7 @@
         <chemical>Luciferium</chemical>
         <addictiveness>0</addictiveness>
         <needLevelOffset>0.1</needLevelOffset>
-        <listOrder>3011</listOrder>
+        <listOrder>2015</listOrder>
         <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
         <largeOverdoseChance>0.005</largeOverdoseChance>
 			</li>

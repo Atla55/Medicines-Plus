@@ -72,7 +72,7 @@
 		<minToleranceToAddict>0</minToleranceToAddict>
         <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
         <needLevelOffset>0.9</needLevelOffset>
-        <listOrder>3014</listOrder>
+        <listOrder>2065</listOrder>
         <overdoseSeverityOffset>0.18~0.35</overdoseSeverityOffset>
         <largeOverdoseChance>0.005</largeOverdoseChance>
 			</li>

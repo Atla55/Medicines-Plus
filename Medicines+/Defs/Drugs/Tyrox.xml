@@ -41,7 +41,7 @@
 		</costList>
 		<comps>
 			<li Class="CompProperties_Drug">
-				<listOrder>3013</listOrder>
+				<listOrder>2075</listOrder>
 				<overdoseSeverityOffset>
 					<min>0.08</min>
 					<max>0.14</max>
