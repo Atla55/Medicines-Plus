@@ -246,7 +246,7 @@
 		<hediffClass>Hediff_Addiction</hediffClass>
 		<label>addictol addiction</label>
 		<description>Because of a Addictol addiction, this person needs to regularly consume the drug to avoid withdrawal symptoms.</description>
-		<causesNeed>Chemical_Aniracetam</causesNeed>
+		<causesNeed>Chemical_Addictol</causesNeed>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.05</severityPerDay>
